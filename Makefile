@@ -1,7 +1,23 @@
-# 部署到OBS
-deploy-obs: 
-	@echo "正在配置OBS工具..."
-	/home/zs/openblock/obsutil_linux_amd64_5.7.3/obsutil config -i=XHWVJ37II890S26N83VV -k=x4SAMMo4Y8upCI1o6BnxWqcuv1DVYnOa5Ph7mJgX -e=obs.cn-south-1.myhuaweicloud.com
-	@echo "正在同步文件到OBS..."
-	/home/zs/openblock/obsutil_linux_amd64_5.7.3/obsutil cp /home/zs/navigation_html obs://nav-xmu -r -flat -f
-	@echo "部署完成!"
+# 233导航 - 部署配置
+
+# 本地预览
+.PHONY: serve
+serve:
+	@echo "正在启动本地服务器..."
+	@echo "请在浏览器中打开 http://localhost:8000"
+	python3 -m http.server 8000
+
+# 部署到 GitHub Pages
+.PHONY: deploy-gh-pages
+deploy-gh-pages:
+	@echo "正在部署到 GitHub Pages..."
+	@echo "请确保已将仓库推送到 GitHub: git push origin main"
+	@echo "然后在 GitHub 仓库 Settings > Pages 中启用 GitHub Pages"
+	@echo "Source 选择 'Deploy from a branch'，Branch 选择 'main'，目录选择 '/ (root)'"
+
+# 推送到 GitHub
+.PHONY: push
+push:
+	@echo "正在推送到 GitHub..."
+	git push origin main
+	@echo "推送完成！"
