@@ -1,4 +1,4 @@
-# 🧭 XMU Nav
+# 🧭 xmu-nav
 
 [![GitHub Pages](https://github.com/BUG423/xmu-nav/actions/workflows/pages.yml/badge.svg)](https://github.com/BUG423/xmu-nav/actions/workflows/pages.yml)
 [![Online Platform](https://img.shields.io/badge/Web-在线导航站点-blue.svg)](https://bug423.github.io/xmu-nav/)
